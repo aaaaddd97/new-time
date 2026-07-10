@@ -1205,3 +1205,19 @@ body {
     transform: translateY(-30px) translateX(20px);
   }
 }
+.splash-hint{
+    position:absolute;
+    bottom:50px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#ddd;
+    font-size:14px;
+    letter-spacing:.3em;
+    opacity:.7;
+    animation: blink 1.8s infinite;
+}
+
+@keyframes blink{
+    0%,100%{opacity:.25;}
+    50%{opacity:1;}
+}
