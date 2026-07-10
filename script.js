@@ -204,3 +204,35 @@ if (ticker) {
     ticker.style.animationPlayState = 'running';
   });
 }
+
+
+/* ===================================================
+   開頭載入動畫 (Splash Screen)
+   =================================================== */
+function initSplashScreen() {
+  const splashScreen = document.getElementById('splashScreen');
+  
+  if (!splashScreen) return;
+  
+  // 3 秒後淡出開頭動畫
+  setTimeout(() => {
+    splashScreen.classList.add('fade-out');
+    
+    // 0.8 秒後完全隱藏
+    setTimeout(() => {
+      splashScreen.style.display = 'none';
+    }, 800);
+  }, 3000);
+}
+
+// 頁面載入完成後執行開頭動畫
+document.addEventListener('DOMContentLoaded', () => {
+  initSplashScreen();
+});
+
+// 如果 DOM 已經載入，直接執行
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initSplashScreen);
+} else {
+  initSplashScreen();
+}
