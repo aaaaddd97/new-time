@@ -210,19 +210,26 @@ if (ticker) {
    開頭載入動畫 (Splash Screen)
    =================================================== */
 function initSplashScreen() {
-  const splashScreen = document.getElementById('splashScreen');
-  
-  if (!splashScreen) return;
-  
-  // 3 秒後淡出開頭動畫
-  setTimeout(() => {
-    splashScreen.classList.add('fade-out');
-    
-    // 0.8 秒後完全隱藏
-    setTimeout(() => {
-      splashScreen.style.display = 'none';
-    }, 800);
-  }, 3000);
+    const splashScreen = document.getElementById('splashScreen');
+
+    if (!splashScreen) return;
+
+    // 避免背景可以捲動
+    document.body.style.overflow = "hidden";
+
+    function enterSite() {
+
+        splashScreen.classList.add("fade-out");
+
+        setTimeout(() => {
+            splashScreen.style.display = "none";
+            document.body.style.overflow = "";
+        }, 800);
+
+        splashScreen.removeEventListener("click", enterSite);
+    }
+
+    splashScreen.addEventListener("click", enterSite);
 }
 
 // 頁面載入完成後執行開頭動畫
