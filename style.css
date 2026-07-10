@@ -1052,3 +1052,156 @@ body {
   .header-title { font-size: 1.2rem; }
   .org-mid-row { flex-direction: column; align-items: center; }
 }
+
+
+/* ===================================================
+   SPLASH SCREEN (開頭載入動畫)
+   =================================================== */
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #0e0a04 0%, #1a1208 50%, #0e0a04 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.8s ease-out;
+  pointer-events: auto;
+}
+
+.splash-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.splash-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.splash-logo-wrapper {
+  position: relative;
+  z-index: 10;
+  animation: splashLogoFadeIn 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+.splash-logo {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  filter: drop-shadow(0 0 40px rgba(200, 146, 42, 0.6));
+  animation: splashLogoPulse 2s ease-in-out infinite;
+}
+
+.splash-glow {
+  position: absolute;
+  inset: -100px;
+  background: radial-gradient(circle, rgba(200, 146, 42, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: splashGlowPulse 2.5s ease-in-out infinite;
+  opacity: 0;
+  animation: splashGlowFadeIn 1s ease-out 0.3s forwards;
+}
+
+.splash-particles {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: splashParticlesFadeIn 1s ease-out 0.5s forwards;
+}
+
+.splash-particles::before,
+.splash-particles::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200, 146, 42, 0.4), transparent);
+}
+
+.splash-particles::before {
+  width: 200px;
+  height: 200px;
+  top: 20%;
+  left: 10%;
+  animation: splashParticleFloat 4s ease-in-out infinite;
+}
+
+.splash-particles::after {
+  width: 150px;
+  height: 150px;
+  bottom: 15%;
+  right: 10%;
+  animation: splashParticleFloat 5s ease-in-out infinite reverse;
+}
+
+@keyframes splashLogoFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes splashLogoPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 40px rgba(200, 146, 42, 0.6));
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 60px rgba(200, 146, 42, 0.8));
+  }
+}
+
+@keyframes splashGlowPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+}
+
+@keyframes splashGlowFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes splashParticlesFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes splashParticleFloat {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-30px) translateX(20px);
+  }
+  50% {
+    transform: translateY(-50px) translateX(-20px);
+  }
+  75% {
+    transform: translateY(-30px) translateX(20px);
+  }
+}
