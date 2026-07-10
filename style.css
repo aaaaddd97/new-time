@@ -1113,7 +1113,24 @@ body {
 
 /* 隱藏不用的效果 */
 .splash-glow,
-.splash-particles,
-.splash-hint {
+.splash-particles {
   display: none;
+}
+
+
+/* 右下角提示文字 */
+.splash-hint {
+  position: absolute;
+  right: 40px;
+  bottom: 30px;
+
+  color: rgba(245, 230, 200, 0.8);
+  font-family: var(--font-serif);
+  font-size: 14px;
+
+  letter-spacing: 0.15em;
+
+  text-shadow: 0 0 8px rgba(200,146,42,0.5);
+
+  pointer-events: none;
 }
