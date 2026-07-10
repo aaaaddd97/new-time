@@ -1,263 +1,614 @@
-<main class="main-content">
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>時空資源管理與監控局</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cinzel:wght@400;700;900&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
 
-<section class="page active" id="home">
+  <!-- 開頭載入動畫 -->
+  <div class="splash-screen" id="splashScreen">
+    <div class="splash-container">
+      <div class="splash-logo-wrapper">
+        <img src="logo.png" alt="時空資源管理與監控局" class="splash-logo" />
+      </div>
+            <div class="splash-hint">
+                點擊任意處進入首頁
+          </div>
+    </div>
+  </div>
 
-    <!-- ================= HERO ================= -->
+  <!-- 齒輪裝飾背景 -->
+  <div class="bg-overlay"></div>
+  <div class="steam-particles" id="steamParticles"></div>
 
-    <div class="hero-banner">
+  <!-- 頂部標題列 -->
+  <header class="site-header">
+    <div class="header-emblem">
+      <div class="gear gear-large" id="gearL"></div>
+      <div class="header-title-block">
+        <div class="header-subtitle">TEMPORAL RESOURCE ADMINISTRATION &amp; SURVEILLANCE BUREAU</div>
+        <h1 class="header-title">時空資源管理與監控局</h1>
+        <div class="header-subtitle">成立於蒸氣曆 1887 年 ── 跨時域秩序之守護者</div>
+      </div>
+      <div class="gear gear-large" id="gearR"></div>
+    </div>
 
+    <!-- 導覽列 -->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#" class="nav-link active" data-page="home">&#9670; 首頁</a></li>
+        <li><a href="#" class="nav-link" data-page="announcements">&#9670; 公告</a></li>
+        <li><a href="#" class="nav-link" data-page="departments">&#9670; 部門架構</a></li>
+        <li><a href="#" class="nav-link" data-page="recruitment">&#9670; 人才招募</a></li>
+        <li><a href="#" class="nav-link" data-page="faq">&#9670; FAQ</a></li>
+        <li><a href="#" class="nav-link" data-page="contact">&#9670; 聯絡我們</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 主要內容區 -->
+  <main class="main-content">
+
+    <!-- ===== 首頁 ===== -->
+    <section id="page-home" class="page active">
+      <div class="hero-banner">
         <div class="hero-clock">
-            <div class="clock-face">
-                <div class="clock-number n12">XII</div>
-                <div class="clock-number n3">III</div>
-                <div class="clock-number n6">VI</div>
-                <div class="clock-number n9">IX</div>
-
-                <div class="clock-hand hour-hand"></div>
-                <div class="clock-hand minute-hand"></div>
-                <div class="clock-hand second-hand"></div>
-
-                <div class="clock-center"></div>
-            </div>
+          <div class="clock-face">
+            <div class="clock-hand hour-hand" id="hourHand"></div>
+            <div class="clock-hand minute-hand" id="minuteHand"></div>
+            <div class="clock-hand second-hand" id="secondHand"></div>
+            <div class="clock-center"></div>
+            <div class="clock-number n12">XII</div>
+            <div class="clock-number n3">III</div>
+            <div class="clock-number n6">VI</div>
+            <div class="clock-number n9">IX</div>
+          </div>
         </div>
-
         <div class="hero-text">
-
-            <h1 class="hero-heading">
-                時空資源管理與監控局
-            </h1>
-
-            <p class="hero-desc">
-                世界線監測系統已完成同步。<br>
-                本局負責監測、回收並管理因時間異常所產生之資源與事件。<br><br>
-
-                <em>
-                「當你看到這句話時，世界線又誕生了不知道多少個了。」
-                </em>
-            </p>
-
+          <h2 class="hero-heading">見證，抉擇，前行</h2>
+          <p class="hero-desc">𝓦𝓲𝓽𝓷𝓮𝓼𝓼. 𝓓𝓮𝓬𝓲𝓭𝓮. 𝓒𝓸𝓷𝓽𝓲𝓷𝓾𝓮.</p>
+          <button class="btn-brass" onclick="showPage('recruitment')">立即申請加入</button>
         </div>
+      </div>
 
-    </div>
-
-
-
-    <!-- ================= 系統狀態 ================= -->
-
-    <div class="panel" style="margin-bottom:32px;">
-
-        <div class="panel-header">
-            ⚙ 系統即時狀態
-        </div>
-
-        <div class="panel-body">
-
-            <div class="gauge-row">
-
-                <div class="gauge-item">
-                    <div class="gauge-value">99.982%</div>
-                    <div class="gauge-label">
-                        世界線同步率
-                    </div>
-                </div>
-
-                <div class="gauge-item">
-                    <div class="gauge-value">243</div>
-                    <div class="gauge-label">
-                        觀測中世界
-                    </div>
-                </div>
-
-                <div class="gauge-item">
-                    <div class="gauge-value">17</div>
-                    <div class="gauge-label">
-                        收時員執勤
-                    </div>
-                </div>
-
-                <div class="gauge-item">
-                    <div class="gauge-value">31</div>
-                    <div class="gauge-label">
-                        異常事件
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- ================= 兩欄 ================= -->
-
-    <div class="content-grid">
-
-
-        <!-- 左 -->
-
+      <div class="content-grid">
         <div class="panel">
-
-            <div class="panel-header">
-                📜 最近觀測紀錄
-            </div>
-
-            <div class="panel-body">
-
-                <div class="news-item">
-                    <span class="news-date">07.11</span>
-                    <span class="news-text">
-                        偵測到 Class-C 世界線分裂。
-                    </span>
-                </div>
-
-                <div class="news-item">
-                    <span class="news-date">07.11</span>
-                    <span class="news-text">
-                        W-341 世界完成回收。
-                    </span>
-                </div>
-
-                <div class="news-item">
-                    <span class="news-date">07.10</span>
-                    <span class="news-text">
-                        第六觀測站重新上線。
-                    </span>
-                </div>
-
-                <div class="news-item">
-                    <span class="news-date">07.10</span>
-                    <span class="news-text">
-                        一名收時員失去聯繫。
-                    </span>
-                </div>
-
-                <div class="news-item">
-                    <span class="news-date">07.09</span>
-                    <span class="news-text">
-                        W-125 世界永久終止。
-                    </span>
-                </div>
-
-            </div>
-
+          <div class="panel-header"><span class="gear-icon">&#9881;</span> 局長公告</div>
+          <div class="panel-body">
+            <p>各位同仁，鑑於近期第七時域出現異常能量波動，本局已啟動「銅盾計畫」進行全面排查。請各部門於本月底前提交時域穩定性報告。</p>
+            <p class="panel-sig">── 局長　鐵明德　蒸氣曆 1923 年</p>
+          </div>
         </div>
-
-
-
-        <!-- 右 -->
-
         <div class="panel">
-
-            <div class="panel-header">
-                ⚠ 系統提示
+          <div class="panel-header"><span class="gear-icon">&#9881;</span> 本局使命</div>
+          <div class="panel-body">
+            <ul class="brass-list">
+              <li>監控全域時空能量流動</li>
+              <li>防範非法時間旅行與資源掠奪</li>
+              <li>維護各時域歷史事件之完整性</li>
+              <li>管理時空裂縫修復工程</li>
+              <li>培訓時域巡邏特工</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-header"><span class="gear-icon">&#9881;</span> 最新動態</div>
+          <div class="panel-body">
+            <div class="news-item">
+              <span class="news-date">1923.07.01</span>
+              <span class="news-text">第三時域修復工程完工</span>
             </div>
-
-            <div class="panel-body">
-
-                <ul class="brass-list">
-
-                    <li>
-                        不要相信所有的觀測結果。
-                    </li>
-
-                    <li>
-                        當兩條世界線完全一致時，
-                        其中一條將被捨棄。
-                    </li>
-
-                    <li>
-                        所有收時員不得與過去的自己接觸。
-                    </li>
-
-                    <li>
-                        未經授權不得跨世界攜帶任何生命體。
-                    </li>
-
-                    <li>
-                        若發現自己的紀錄遭到修改，
-                        請立即停止閱讀並回報。
-                    </li>
-
-                </ul>
-
+            <div class="news-item">
+              <span class="news-date">1923.06.15</span>
+              <span class="news-text">新型蒸氣時域儀正式啟用</span>
             </div>
+            <div class="news-item">
+              <span class="news-date">1923.05.30</span>
+              <span class="news-text">招募第十二期時域特工</span>
+            </div>
+            <div class="news-item">
+              <span class="news-date">1923.04.22</span>
+              <span class="news-text">與星際資源聯盟簽訂協議</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <!-- 儀表板裝飾 -->
+      <div class="gauge-row">
+        <div class="gauge-item">
+          <div class="gauge-dial" data-value="73">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" class="gauge-bg"/>
+              <path class="gauge-arc" id="arc1" d=""/>
+              <text x="50" y="58" class="gauge-text">73%</text>
+            </svg>
+          </div>
+          <div class="gauge-label">時域穩定度</div>
+        </div>
+        <div class="gauge-item">
+          <div class="gauge-dial" data-value="91">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" class="gauge-bg"/>
+              <path class="gauge-arc" id="arc2" d=""/>
+              <text x="50" y="58" class="gauge-text">91%</text>
+            </svg>
+          </div>
+          <div class="gauge-label">能量供應率</div>
+        </div>
+        <div class="gauge-item">
+          <div class="gauge-dial" data-value="58">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" class="gauge-bg"/>
+              <path class="gauge-arc" id="arc3" d=""/>
+              <text x="50" y="58" class="gauge-text">58%</text>
+            </svg>
+          </div>
+          <div class="gauge-label">裂縫修復進度</div>
+        </div>
+        <div class="gauge-item">
+          <div class="gauge-dial" data-value="85">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" class="gauge-bg"/>
+              <path class="gauge-arc" id="arc4" d=""/>
+              <text x="50" y="58" class="gauge-text">85%</text>
+            </svg>
+          </div>
+          <div class="gauge-label">特工戰備狀態</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 公告 ===== -->
+    <section id="page-announcements" class="page">
+      <h2 class="page-title">&#128240; 官方公告欄</h2>
+      <div class="announcement-ticker">
+        <span class="ticker-label">緊急通報</span>
+        <div class="ticker-content" id="ticker">第七時域異常波動持續監測中 ── 銅盾計畫第二階段啟動 ── 所有特工請保持通訊暢通 ──</div>
+      </div>
+
+      <div class="announcement-list">
+        <div class="announcement-card priority-high">
+          <div class="ann-header">
+            <span class="ann-badge urgent">緊急</span>
+            <span class="ann-title">第七時域異常能量波動警報</span>
+            <span class="ann-date">蒸氣曆 1923.07.08</span>
+          </div>
+          <div class="ann-body">
+            <p>偵測到第七時域於標準時間軸座標 7-Δ-449 處出現不明能量聚集，強度達 4.7 克羅諾單位，超出安全閾值 2.3 倍。時域監控部已派遣甲級特工小隊前往調查，預計 72 小時內回報。所有相關部門請進入二級戒備狀態。</p>
+          </div>
         </div>
 
-
-    </div>
-
-
-
-    <!-- ================= 快速入口 ================= -->
-
-    <div class="panel">
-
-        <div class="panel-header">
-            ⚙ 快速入口
+        <div class="announcement-card priority-medium">
+          <div class="ann-header">
+            <span class="ann-badge notice">通知</span>
+            <span class="ann-title">新型蒸氣時域儀 MK-VII 正式投入使用</span>
+            <span class="ann-date">蒸氣曆 1923.06.15</span>
+          </div>
+          <div class="ann-body">
+            <p>研發部門歷經三年研製，新型蒸氣時域儀 MK-VII 已通過全部測試，正式於本局各監控站投入使用。新型儀器偵測精度提升 340%，可有效識別微型時空裂縫。各站點操作人員請於本月底前完成換裝訓練。</p>
+          </div>
         </div>
 
+        <div class="announcement-card priority-medium">
+          <div class="ann-header">
+            <span class="ann-badge notice">通知</span>
+            <span class="ann-title">第十二期時域特工招募正式開始</span>
+            <span class="ann-date">蒸氣曆 1923.05.30</span>
+          </div>
+          <div class="ann-body">
+            <p>本局即日起開放第十二期時域特工招募，預計錄取 30 名。申請者須具備基礎時空理論知識，通過體能測試及心理評估。詳細資訊請參閱人才招募頁面。報名截止日期：蒸氣曆 1923.09.01。</p>
+          </div>
+        </div>
+
+        <div class="announcement-card priority-low">
+          <div class="ann-header">
+            <span class="ann-badge info">公告</span>
+            <span class="ann-title">與星際資源聯盟簽訂跨域合作協議</span>
+            <span class="ann-date">蒸氣曆 1923.04.22</span>
+          </div>
+          <div class="ann-body">
+            <p>本局局長鐵明德與星際資源聯盟主席奧古斯特·馮·克羅諾斯正式簽署《跨時域資源共享與安全協議》，雙方將在時空能量管理、裂縫修復技術及特工培訓等領域展開深度合作，協議有效期為 50 個標準年。</p>
+          </div>
+        </div>
+
+        <div class="announcement-card priority-low">
+          <div class="ann-header">
+            <span class="ann-badge info">公告</span>
+            <span class="ann-title">第三時域修復工程竣工報告</span>
+            <span class="ann-date">蒸氣曆 1923.07.01</span>
+          </div>
+          <div class="ann-body">
+            <p>歷時 18 個月的第三時域大型裂縫修復工程已於本日正式竣工。此次工程共修復主裂縫 1 條、次級裂縫 17 條，恢復時域穩定度至 98.7%。感謝工程部門全體同仁的辛勤付出。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 部門架構 ===== -->
+    <section id="page-departments" class="page">
+      <h2 class="page-title">&#9881; 部門架構</h2>
+      <div class="org-chart">
+<div class="org-top">
+          <div class="org-box director-box">
+            <div class="org-icon">&#9813;</div>
+            <div class="org-name">局長</div>
+            <div class="org-sub">???</div>
+          </div>
+        </div>
+        <div class="org-connector-v"></div>
+        <div class="org-top">
+          <div class="org-box top-box">
+            <div class="org-icon">&#9812;</div>
+            <div class="org-name">中央時序議會</div>
+            <div class="org-sub">決策機關</div>
+          </div>
+        </div>
+        <div class="org-connector-v"></div>
+        <div class="org-mid-row">
+          <div class="org-branch">
+            <div class="org-box dept-box" onclick="toggleDept('dept1')">
+              <div class="org-icon">&#128200;</div>
+              <div class="org-name">事務執行部</div>
+              <div class="org-sub">Operations Department</div>
+            </div>
+            <div class="dept-detail" id="dept1">
+              <ul>
+                <li>內務運務科</li>
+                <li>時序干涉科</li>
+              </ul>
+            </div>
+          </div>
+          <div class="org-branch">
+            <div class="org-box dept-box" onclick="toggleDept('dept2')">
+              <div class="org-icon">&#128100;</div>
+              <div class="org-name">人員異常處理部</div>
+              <div class="org-sub">Personnel Anomaly Dept.</div>
+            </div>
+            <div class="dept-detail" id="dept2">
+              <ul>
+                <li>人員治療科</li>
+                <li>認知修復科</li>
+              </ul>
+            </div>
+          </div>
+          <div class="org-branch">
+            <div class="org-box dept-box" onclick="toggleDept('dept3')">
+              <div class="org-icon">&#128221;</div>
+              <div class="org-name">資訊統整部</div>
+              <div class="org-sub">Information Integration Dept.</div>
+            </div>
+            <div class="dept-detail" id="dept3">
+              <ul>
+                <li>資料統計科</li>
+                <li>技術研發科</li>
+                <li>時空觀測科</li>
+              </ul>
+            </div>
+          </div>
+          <div class="org-branch">
+            <div class="org-box dept-box" onclick="toggleDept('dept4')">
+              <div class="org-icon">&#128230;</div>
+              <div class="org-name">資源保障部</div>
+              <div class="org-sub">Resource Assurance Dept.</div>
+            </div>
+            <div class="dept-detail" id="dept4">
+              <ul>
+                <li>物資管理科</li>
+                <li>契約評量科</li>
+                <li>設施維護科</li>
+              </ul>
+            </div>
+          </div>
+          <div class="org-branch">
+            <div class="org-box dept-box" onclick="toggleDept('dept5')">
+              <div class="org-icon">&#128065;</div>
+              <div class="org-name">全局督察部</div>
+              <div class="org-sub">Inspectorate General</div>
+            </div>
+            <div class="dept-detail" id="dept5">
+              <ul>
+                <li>人員懲戒科</li>
+                <li>案件糾正科</li>
+                <li>物件處置科</li>
+                <li>緊急應變科</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="dept-note">&#9888; 點擊各部門方塊可展開下屬單位詳情</p>
+    </section>
+
+    <!-- ===== 人才招募 ===== -->
+    <section id="page-recruitment" class="page">
+      <h2 class="page-title">&#128100; 人才招募</h2>
+      <div class="recruit-intro panel">
+        <div class="panel-header"><span class="gear-icon">&#9881;</span> 加入時空資源管理與監控局</div>
         <div class="panel-body">
+          <p>本局長期尋覓具備卓越智識、堅毅意志與對時空秩序充滿熱忱之優秀人才。加入我們，您將成為守護時間長河穩定的關鍵力量。</p>
+        </div>
+      </div>
 
-            <div class="content-grid">
+      <div class="job-grid">
+        <div class="job-card">
+          <div class="job-header">
+            <span class="job-dept">特工行動部</span>
+            <span class="job-title">時域巡邏特工</span>
+          </div>
+          <div class="job-body">
+            <p>負責在指定時域執行巡邏任務，偵測並阻止非法時間旅行活動，維護時域秩序。</p>
+            <button class="btn-brass btn-sm" onclick="openApply('時域巡邏特工')">申請此職位</button>
+          </div>
+        </div>
+        <div class="job-card">
+          <div class="job-header">
+            <span class="job-dept">事務執行部</span>
+            <span class="job-title">時空裂縫修復工程師</span>
+          </div>
+          <div class="job-body">
+            <p>使用蒸氣動力修復裝置，對時空裂縫進行評估、規劃及修復作業，確保時域結構完整。</p>
+            <button class="btn-brass btn-sm" onclick="openApply('時空裂縫修復工程師')">申請此職位</button>
+          </div>
+        </div>
+        <div class="job-card">
+          <div class="job-header">
+            <span class="job-dept">資訊統整部</span>
+            <span class="job-title">時空波動分析師</span>
+          </div>
+          <div class="job-body">
+            <p>透過蒸氣時域儀監測各時域能量波動，分析異常數據，提供預警報告給上級單位。</p>
+            <button class="btn-brass btn-sm" onclick="openApply('時空波動分析師')">申請此職位</button>
+          </div>
+        </div>
+        <div class="job-card">
+          <div class="job-header">
+            <span class="job-dept">資訊統整部</span>
+            <span class="job-title">時空理論研究員</span>
+          </div>
+          <div class="job-body">
+            <p>從事時空理論前沿研究，開發新型時域干涉防護技術，撰寫研究報告供局內決策參考。</p>
+            <button class="btn-brass btn-sm" onclick="openApply('時空理論研究員')">申請此職位</button>
+          </div>
+        </div>
+        <div class="job-card">
+          <div class="job-header">
+            <span class="job-dept">資源保障部</span>
+            <span class="job-title">跨域資源登記員</span>
+          </div>
+          <div class="job-body">
+            <p>負責登記、追蹤及管理各時域之資源流動記錄，維護資源資料庫的完整性與準確性。</p>
+            <button class="btn-brass btn-sm" onclick="openApply('跨域資源登記員')">申請此職位</button>
+          </div>
+        </div>
+        <div class="job-card">
+          <div class="job-header">
+            <span class="job-dept">全局督察部</span>
+            <span class="job-title">機密檔案管理員</span>
+          </div>
+          <div class="job-body">
+            <p>管理本局各類機密文件及歷史檔案，確保資訊安全，協助各部門進行檔案查詢作業。</p>
+            <button class="btn-brass btn-sm" onclick="openApply('機密檔案管理員')">申請此職位</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                <button class="btn-brass">
-                    組織架構
-                </button>
+    <!-- ===== FAQ ===== -->
+    <section id="page-faq" class="page">
+      <h2 class="page-title">&#10067; 常見問題</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-icon">&#9654;</span>
+            時空資源管理與監控局的主要職責是什麼？
+          </div>
+          <div class="faq-answer">
+            <p>本局主要負責三大核心任務：其一，監控全域時空能量流動，偵測並預防時空裂縫的形成；其二，管理各時域之資源分配，確保能量供給的公平與穩定；其三，執行反非法時間旅行行動，維護歷史脈絡的完整性，防止未授權的時域干涉行為。</p>
+          </div>
+        </div>
 
-                <button class="btn-brass">
-                    招募資訊
-                </button>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-icon">&#9654;</span>
+            如何申請時間旅行許可證？
+          </div>
+          <div class="faq-answer">
+            <p>時間旅行許可證申請需透過本局官方電報系統提交申請表格 TT-77B，並附上旅行目的說明、預計時域座標及返回時間。審核期通常為 30 個標準工作日。緊急情況可申請快速審核（附加費用：50 克羅諾幣）。未經許可擅自進行時間旅行屬嚴重違法行為，最高可處 200 年時域監禁。</p>
+          </div>
+        </div>
 
-                <button class="btn-brass">
-                    異常紀錄
-                </button>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-icon">&#9654;</span>
+            什麼是「時域穩定度」？如何影響日常生活？
+          </div>
+          <div class="faq-answer">
+            <p>時域穩定度是衡量特定時空區域能量平衡狀態的指標，以百分比表示。當穩定度低於 60% 時，該區域可能出現時間流速異常、物質半實體化等現象，對居民日常生活造成嚴重影響。本局設有 24 小時監控系統，當任何時域穩定度低於 70% 時將自動觸發警報並派遣修復小組。</p>
+          </div>
+        </div>
 
-                <button class="btn-brass">
-                    收時員守則
-                </button>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-icon">&#9654;</span>
+            我發現疑似時空裂縫，應如何通報？
+          </div>
+          <div class="faq-answer">
+            <p>若您發現以下異常現象，請立即通報本局：空氣中出現藍紫色發光裂縫、周圍時間流速明顯加速或減慢、聽到低頻嗡嗡聲或看到重影現象。通報方式：撥打緊急時域熱線 1887-TIME，或使用本局官方電報系統發送緊急代碼「RIFT-ALERT」。請勿靠近裂縫，保持至少 50 公尺安全距離。</p>
+          </div>
+        </div>
 
-                <button class="btn-brass">
-                    常見問題
-                </button>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-icon">&#9654;</span>
+            加入本局後，員工享有哪些福利？
+          </div>
+          <div class="faq-answer">
+            <p>本局員工享有完善的福利制度，包括：跨時域醫療保障（涵蓋時域病、時間衰老症等特殊疾病）、年度時域旅行津貼（限合法授權旅行）、蒸氣動力交通補助、退休後時域凍齡服務，以及子女優先就讀時空學院之資格。特工人員另享有危險任務加給及時域保險。</p>
+          </div>
+        </div>
 
-                <button class="btn-brass">
-                    聯絡本局
-                </button>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-icon">&#9654;</span>
+            什麼是「克羅諾單位」？
+          </div>
+          <div class="faq-answer">
+            <p>克羅諾單位（Chrono Unit，縮寫 CU）是本局使用的時空能量計量標準，由最高時空議會於蒸氣曆 1850 年正式訂定。1 克羅諾單位相當於維持 1 立方公里空間時域穩定所需的能量。一般時空裂縫的能量釋放量約為 0.1–5 CU，超過 10 CU 的事件將被列為重大時域災害。</p>
+          </div>
+        </div>
 
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-icon">&#9654;</span>
+            本局與其他時空管理機構的關係為何？
+          </div>
+          <div class="faq-answer">
+            <p>本局為最高時空議會下轄之最高執行機關，與星際資源聯盟、時域科學院及各地方時空管理處保持合作關係。本局擁有跨時域執法權，可在任何已知時域執行任務。與其他機構的協作事宜由局長辦公室統一協調，確保跨機構行動的一致性與效率。</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== 聯絡我們 ===== -->
+    <section id="page-contact" class="page">
+      <h2 class="page-title">&#128233; 聯絡我們</h2>
+      <div class="contact-grid">
+        <div class="contact-info panel">
+          <div class="panel-header"><span class="gear-icon">&#9881;</span> 聯絡資訊</div>
+          <div class="panel-body">
+            <div class="contact-item">
+              <span class="contact-label">總局地址</span>
+              <span class="contact-value">蒸氣帝國首都，克羅諾大道 1887 號，時空塔 B 棟</span>
             </div>
-
+            <div class="contact-item">
+              <span class="contact-label">緊急時域熱線</span>
+              <span class="contact-value">1887-TIME（24 小時）</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">一般電報</span>
+              <span class="contact-value">bureau@stcb.chronogov.tm</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">招募電報</span>
+              <span class="contact-value">recruit@stcb.chronogov.tm</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">辦公時間</span>
+              <span class="contact-value">蒸氣曆工作日 09:00–18:00<br/>（時域緊急事務全年無休）</span>
+            </div>
+          </div>
         </div>
 
+        <div class="contact-form-panel panel">
+          <div class="panel-header"><span class="gear-icon">&#9881;</span> 發送電報</div>
+          <div class="panel-body">
+            <form id="contactForm" onsubmit="submitContact(event)">
+              <div class="form-group">
+                <label>您的姓名</label>
+                <input type="text" placeholder="請輸入姓名" required />
+              </div>
+              <div class="form-group">
+                <label>電報地址</label>
+                <input type="email" placeholder="your@address.tm" required />
+              </div>
+              <div class="form-group">
+                <label>事由類別</label>
+                <select>
+                  <option>一般查詢</option>
+                  <option>時空裂縫通報</option>
+                  <option>許可證申請</option>
+                  <option>投訴與建議</option>
+                  <option>媒體採訪申請</option>
+                  <option>其他</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>訊息內容</label>
+                <textarea placeholder="請詳述您的問題 or 需求..." rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn-brass">發送電報</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-panel panel">
+        <div class="panel-header"><span class="gear-icon">&#9881;</span> 時域分佈圖</div>
+        <div class="panel-body">
+          <div class="time-map">
+            <div class="map-grid">
+              <div class="map-node active" title="第一時域 ── 穩定">T-1</div>
+              <div class="map-node active" title="第二時域 ── 穩定">T-2</div>
+              <div class="map-node active" title="第三時域 ── 修復完成">T-3</div>
+              <div class="map-node warning" title="第四時域 ── 輕微波動">T-4</div>
+              <div class="map-node active" title="第五時域 ── 穩定">T-5</div>
+              <div class="map-node active" title="第六時域 ── 穩定">T-6</div>
+              <div class="map-node danger" title="第七時域 ── 異常警報">T-7</div>
+              <div class="map-node active" title="第八時域 ── 穩定">T-8</div>
+              <div class="map-node active" title="第九時域 ── 穩定">T-9</div>
+            </div>
+            <div class="map-legend">
+              <span class="legend-item"><span class="dot active"></span>穩定</span>
+              <span class="legend-item"><span class="dot warning"></span>輕微波動</span>
+              <span class="legend-item"><span class="dot danger"></span>異常警報</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 頁尾 -->
+  <footer class="site-footer">
+    <div class="footer-gears">
+      <div class="gear gear-sm spin-slow"></div>
+      <div class="gear gear-md spin-reverse"></div>
+      <div class="gear gear-sm spin-slow"></div>
     </div>
+    <p class="footer-text">&#169; 蒸氣曆 1887–1923　時空資源管理與監控局　版權所有</p>
+    <p class="footer-sub">本局受最高時空議會監督 ── 維護時間之秩序，守護歷史之完整</p>
+  </footer>
 
+  <!-- 成功通知 -->
+  <div class="toast" id="toast"></div>
 
-
-    <!-- ================= 權限 ================= -->
-
-    <div class="panel" style="margin-top:32px;">
-
-        <div class="panel-header">
-            🔒 A-0 權限
-        </div>
-
-        <div class="panel-body" style="text-align:center;">
-
-            <h2 style="letter-spacing:.3em;">
-                ACCESS DENIED
-            </h2>
-
-            <p class="panel-sig">
-                局長相關資訊已加密。<br>
-                需要 A-0 級權限。
-            </p>
-
-        </div>
-
+  <!-- 申請職位 Modal -->
+  <div class="modal-overlay" id="applyModal">
+    <div class="modal-content panel">
+      <div class="panel-header">
+        <span class="gear-icon">&#9881;</span> 職位申請：<span id="modalJobTitle"></span>
+        <button class="modal-close" onclick="closeApply()">&times;</button>
+      </div>
+      <div class="panel-body">
+        <form onsubmit="submitApply(event)">
+          <div class="form-group">
+            <label>申請人全名</label>
+            <input type="text" required placeholder="請輸入真實姓名" />
+          </div>
+          <div class="form-group">
+            <label>時域籍貫</label>
+            <input type="text" required placeholder="例如：第三時域，倫敦" />
+          </div>
+          <div class="form-group">
+            <label>個人專長摘要</label>
+            <textarea rows="3" required placeholder="請簡述您的相關經驗..."></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-brass btn-sm" style="background: var(--iron);" onclick="closeApply()">取消</button>
+            <button type="submit" class="btn-brass btn-sm">提交申請</button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 
-</section>
-
-</main>
+  <script src="script.js"></script>
+</body>
+</html>
