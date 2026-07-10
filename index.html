@@ -221,104 +221,89 @@
     <section id="page-departments" class="page">
       <h2 class="page-title">&#9881; 部門架構</h2>
       <div class="org-chart">
-        <div class="org-top">
-          <div class="org-box top-box">
-            <div class="org-icon">&#9812;</div>
-            <div class="org-name">最高時空議會</div>
-            <div class="org-sub">監督機關</div>
+<div class="org-top">
+          <div class="org-box director-box">
+            <div class="org-icon">&#9813;</div>
+            <div class="org-name">局長</div>
+            <div class="org-sub">最高決策者</div>
           </div>
         </div>
         <div class="org-connector-v"></div>
         <div class="org-top">
-          <div class="org-box director-box">
-            <div class="org-icon">&#9813;</div>
-            <div class="org-name">局長辦公室</div>
-            <div class="org-sub">局長：鐵明德</div>
+          <div class="org-box top-box">
+            <div class="org-icon">&#9812;</div>
+            <div class="org-name">中央時序議會</div>
+            <div class="org-sub">監督與指導</div>
           </div>
         </div>
         <div class="org-connector-v"></div>
         <div class="org-mid-row">
           <div class="org-branch">
-            <div class="org-box dept-box" onclick="toggleDept('dept1')">
-              <div class="org-icon">&#128269;</div>
-              <div class="org-name">時域監控部</div>
-              <div class="org-sub">部長：葛雷戈里</div>
+            <div class="org-box dept-box" onclick="toggleDept(\'dept1\')">
+              <div class="org-icon">&#128200;</div>
+              <div class="org-name">事務執行部</div>
+              <div class="org-sub">Operations Department</div>
             </div>
             <div class="dept-detail" id="dept1">
               <ul>
-                <li>時空波動偵測組</li>
-                <li>裂縫預警系統組</li>
-                <li>跨域通訊監聽組</li>
+                <li>內務運務科</li>
+                <li>時序干涉科</li>
               </ul>
             </div>
           </div>
           <div class="org-branch">
-            <div class="org-box dept-box" onclick="toggleDept('dept2')">
-              <div class="org-icon">&#128736;</div>
-              <div class="org-name">工程修復部</div>
-              <div class="org-sub">部長：艾達·科爾</div>
+            <div class="org-box dept-box" onclick="toggleDept(\'dept2\')">
+              <div class="org-icon">&#128100;</div>
+              <div class="org-name">人員異常處理部</div>
+              <div class="org-sub">Personnel Anomaly Dept.</div>
             </div>
             <div class="dept-detail" id="dept2">
               <ul>
-                <li>裂縫修復工程組</li>
-                <li>時域穩定裝置維護組</li>
-                <li>蒸氣動力研發組</li>
+                <li>人員治療科</li>
+                <li>認知修復科</li>
               </ul>
             </div>
           </div>
           <div class="org-branch">
-            <div class="org-box dept-box" onclick="toggleDept('dept3')">
-              <div class="org-icon">&#128100;</div>
-              <div class="org-name">特工行動部</div>
-              <div class="org-sub">部長：維克多·史東</div>
+            <div class="org-box dept-box" onclick="toggleDept(\'dept3\')">
+              <div class="org-icon">&#128221;</div>
+              <div class="org-name">資訊統整部</div>
+              <div class="org-sub">Information Integration Dept.</div>
             </div>
             <div class="dept-detail" id="dept3">
               <ul>
-                <li>甲級特工隊</li>
-                <li>時域滲透行動組</li>
-                <li>反非法旅行執法組</li>
+                <li>資料統計科</li>
+                <li>技術研發科</li>
+                <li>時空觀測科</li>
               </ul>
             </div>
           </div>
           <div class="org-branch">
-            <div class="org-box dept-box" onclick="toggleDept('dept4')">
-              <div class="org-icon">&#128218;</div>
-              <div class="org-name">資源管理部</div>
-              <div class="org-sub">部長：瑪格麗特·陳</div>
+            <div class="org-box dept-box" onclick="toggleDept(\'dept4\')">
+              <div class="org-icon">&#128230;</div>
+              <div class="org-name">資源保障部</div>
+              <div class="org-sub">Resource Assurance Dept.</div>
             </div>
             <div class="dept-detail" id="dept4">
               <ul>
-                <li>時空能量調配組</li>
-                <li>跨域資源登記組</li>
-                <li>歷史文物保管組</li>
+                <li>物資管理科</li>
+                <li>契約評量科</li>
+                <li>設施維護科</li>
               </ul>
             </div>
           </div>
           <div class="org-branch">
-            <div class="org-box dept-box" onclick="toggleDept('dept5')">
-              <div class="org-icon">&#128300;</div>
-              <div class="org-name">研究發展部</div>
-              <div class="org-sub">部長：尼古拉·特斯拉二世</div>
+            <div class="org-box dept-box" onclick="toggleDept(\'dept5\')">
+              <div class="org-icon">&#128065;</div>
+              <div class="org-name">全局督察部</div>
+              <div class="org-sub">Inspectorate General</div>
             </div>
             <div class="dept-detail" id="dept5">
               <ul>
-                <li>時空理論研究組</li>
-                <li>新型儀器研發組</li>
-                <li>時域生物學研究組</li>
-              </ul>
-            </div>
-          </div>
-          <div class="org-branch">
-            <div class="org-box dept-box" onclick="toggleDept('dept6')">
-              <div class="org-icon">&#128196;</div>
-              <div class="org-name">行政人事部</div>
-              <div class="org-sub">部長：奧利維亞·布朗</div>
-            </div>
-            <div class="dept-detail" id="dept6">
-              <ul>
-                <li>人員招募訓練組</li>
-                <li>薪資福利管理組</li>
-                <li>機密檔案管理組</li>
+                <li>人員懲戒科</li>
+                <li>案件糾正科</li>
+                <li>物件處置科</li>
+                <li>緊急應變科</li>
               </ul>
             </div>
           </div>
