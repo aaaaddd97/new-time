@@ -1075,38 +1075,29 @@ body {
   pointer-events: none;
 }
 
-.splash-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.splash-container{
+    width:100vw;
+    height:100vh;
 }
 
-.splash-logo-wrapper {
-  position: relative;
-  z-index: 10;
-  animation: splashLogoFadeIn 1.2s ease-out forwards;
-  opacity: 0;
+.splash-logo-wrapper{
+    position:relative;
+    width:100%;
+    height:100%;
+    opacity:1;
 }
 
-.splash-logo {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  filter: drop-shadow(0 0 40px rgba(200, 146, 42, 0.6));
-  animation: splashLogoPulse 2s ease-in-out infinite;
+.splash-logo{
+    width:100vw;
+    height:100vh;
+    object-fit:contain;   /* 想裁切滿版改 cover */
+    max-width:none;
+    filter:none;
 }
 
-.splash-glow {
-  position: absolute;
-  inset: -100px;
-  background: radial-gradient(circle, rgba(200, 146, 42, 0.3) 0%, transparent 70%);
-  border-radius: 50%;
-  animation: splashGlowPulse 2.5s ease-in-out infinite;
-  opacity: 0;
-  animation: splashGlowFadeIn 1s ease-out 0.3s forwards;
+.splash-glow,
+.splash-particles{
+    display:none;
 }
 
 .splash-particles {
