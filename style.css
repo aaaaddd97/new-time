@@ -1090,9 +1090,8 @@ body {
 .splash-logo{
     width:100vw;
     height:100vh;
-    object-fit:contain;   /* 想裁切滿版改 cover */
     max-width:none;
-    filter:none;
+    object-fit:cover; /* 或 contain */
 }
 
 .splash-glow,
