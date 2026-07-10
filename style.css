@@ -372,6 +372,9 @@ body {
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px var(--shadow), 0 0 20px var(--glow);
   text-shadow: none;
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
 }
 .btn-brass:hover {
   background: linear-gradient(135deg, var(--brass), var(--brass-light), var(--brass));
